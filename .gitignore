@@ -1,4 +1,6 @@
 .bundle/
 bundle/
 *.swp
+.env
+data/
 
