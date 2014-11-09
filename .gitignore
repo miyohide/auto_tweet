@@ -3,4 +3,5 @@ bundle/
 *.swp
 .env
 data/
+.DS_Store
 
