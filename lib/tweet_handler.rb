@@ -18,7 +18,7 @@ class TweetHandler
          job.unschedule
          @scheduler.at(Time.now + 15.seconds, TweetHandler.new(@twitter_client, @msg, @scheduler))
       elsif e.instance_of?(Twitter::Error::Forbidden)
-         if e.wrapped_exception.start_with?("Status is a duplicate")
+         if e.message.start_with?("Status is a duplicate")
             $stderr.puts '二重送信エラー。再送信は行いません。'
             job.unschedule
          else
